@@ -6,6 +6,7 @@ public class PlayerPull : MonoBehaviour
 {
     public float distance = 1f;
     public LayerMask boxMask;
+    public Vector3 offset;
 
     private Animator anim;
 
@@ -19,7 +20,7 @@ public class PlayerPull : MonoBehaviour
     void Update()
     {
         Physics2D.queriesStartInColliders = false;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - offset, Vector2.right * transform.localScale.x, distance, boxMask);
 
         if (hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyDown(KeyCode.E))
         {
@@ -42,6 +43,6 @@ public class PlayerPull : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position,(Vector2)transform.position+  Vector2.right * transform.localScale.x* distance);
+        Gizmos.DrawLine(transform.position - offset, (Vector2)(transform.position - offset)+  Vector2.right * transform.localScale.x* distance);
     }
 }

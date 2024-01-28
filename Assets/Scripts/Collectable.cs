@@ -49,7 +49,7 @@ public class Collectable : MonoBehaviour
             else if(GameManager.orbsCollected > 1 && GameManager.orbsCollected <= 3)
             {
                 //reset timer to original time
-                GameManager.currentTime = 15f;
+                GameManager.currentTime = 20f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.3f;
@@ -58,7 +58,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 3 && GameManager.orbsCollected <= 5)
             {
                 //reset timer to 10
-                GameManager.currentTime = 12.5f;
+                GameManager.currentTime = 17.5f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.5f;
@@ -67,7 +67,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 5 && GameManager.orbsCollected <= 6)
             {
                 //reset timer to 5
-                GameManager.currentTime = 10f;
+                GameManager.currentTime = 15f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.7f;
@@ -76,7 +76,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 6 && GameManager.orbsCollected <= 7)
             {
                 //reset timer to original time
-                GameManager.currentTime = 7f;
+                GameManager.currentTime = 10f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.9f;
