@@ -33,7 +33,9 @@ public class GameManager : MonoBehaviour
             currentTime = 0;
             Debug.Log("Time's up!");
             timerOn = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Death.sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene("Death");
        }
 
         if (orbsCollected < 3)

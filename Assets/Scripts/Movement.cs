@@ -120,7 +120,9 @@ public class Movement : MonoBehaviour
             speed = 8f;
             jumpPower = 16f;
             GameManager.orbsCollected = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Death.sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene("Death");
         }
     }
 }
