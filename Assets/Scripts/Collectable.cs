@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Collectable : MonoBehaviour
 {
     [SerializeField] Image blackout;
+    [SerializeField] Text timeText;
 
     private void Update()
     {
@@ -16,12 +18,14 @@ public class Collectable : MonoBehaviour
                 var tempColor = blackout.color;
                 tempColor.r = 255;
                 blackout.color = tempColor;
+                timeText.enabled = true;
             }
             else
             {
                 var tempColor = blackout.color;
                 tempColor.r = 0;
                 blackout.color = tempColor;
+                timeText.enabled = false;
             }
         }
     }
@@ -54,7 +58,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 3 && GameManager.orbsCollected <= 5)
             {
                 //reset timer to 10
-                GameManager.currentTime = 10f;
+                GameManager.currentTime = 12.5f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.5f;
@@ -63,7 +67,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 5 && GameManager.orbsCollected <= 6)
             {
                 //reset timer to 5
-                GameManager.currentTime = 5f;
+                GameManager.currentTime = 10f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.7f;
@@ -72,7 +76,7 @@ public class Collectable : MonoBehaviour
             else if (GameManager.orbsCollected > 6 && GameManager.orbsCollected <= 7)
             {
                 //reset timer to original time
-                GameManager.currentTime = 3f;
+                GameManager.currentTime = 7f;
 
                 var tempColor = blackout.color;
                 tempColor.a = 0.9f;
@@ -82,6 +86,7 @@ public class Collectable : MonoBehaviour
             {
                 //Player blacks out level is over 
                 //next scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
             Destroy(gameObject);

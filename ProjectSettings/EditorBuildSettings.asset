@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/I_Can_Laugh.unity
+    guid: f4672982054aca844a38bf509e1467e3
+  - enabled: 1
+    path: Assets/Scenes/Was_It_Worth_It.unity
+    guid: d7281b9fde7e9da468f99cea49677a49
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: fe8bf058c89636f4b90025858ef444a8
   m_configObjects: {}

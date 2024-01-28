@@ -11,17 +11,17 @@ public class Movement : MonoBehaviour
     private bool isFacingRight = true;
     public static bool isPulling = false;
 
-    public Transform startPoint;
-    public Transform endPoint;
-    public GameObject platform;
-
     public static bool powerOn = false;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-
+    private void Start()
+    {
+        speed = 8f;
+        jumpPower = 16f;
+    }
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -87,7 +87,7 @@ public class Movement : MonoBehaviour
             speed = 8f;
             jumpPower = 16f;
             GameManager.orbsCollected = 0;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
