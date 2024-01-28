@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static float currentTime = 0f;
     float startingTime = 15f;
     public static bool timerOn = false;
+    [SerializeField] private Animator anim;
 
     [SerializeField] Text count;
     private void Start()
@@ -34,5 +35,18 @@ public class GameManager : MonoBehaviour
             timerOn = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
        }
+
+        if (orbsCollected < 3)
+        {
+            anim.SetInteger("Stage", 0);
+        }
+        else if (orbsCollected >= 3 && orbsCollected < 6)
+        {
+            anim.SetInteger("Stage", 1);
+        }
+        else if (orbsCollected >= 6)
+        {
+            anim.SetInteger("Stage", 2);
+        }
     }
 }

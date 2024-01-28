@@ -7,10 +7,12 @@ public class PlayerPull : MonoBehaviour
     public float distance = 1f;
     public LayerMask boxMask;
 
+    private Animator anim;
+
     GameObject box;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     
@@ -26,10 +28,14 @@ public class PlayerPull : MonoBehaviour
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
 
+            anim.SetBool("IsPulling", true);
+
         }
         else if(Input.GetKeyDown(KeyCode.F))
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
+
+            anim.SetBool("IsPulling", false);
         }
     }
 

@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
 
     public static bool powerOn = false;
 
+    private Animator anim;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -21,6 +23,7 @@ public class Movement : MonoBehaviour
     {
         speed = 8f;
         jumpPower = 16f;
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -39,6 +42,36 @@ public class Movement : MonoBehaviour
         if(!isPulling)
         {
             Flip();
+        }
+
+        //check if grounded
+        if(!IsGrounded())
+        {
+            anim.SetBool("IsGrounded", false);
+        }
+        else
+        {
+            anim.SetBool("IsGrounded", true);
+        }
+
+        //check jumping
+        if(rb.velocity.y > 0)
+        {
+            anim.SetBool("isFalling", false);
+        }
+        else
+        {
+            anim.SetBool("isFalling", true);
+        }
+
+        //check if moving
+        if(Input.GetAxis("Horizontal") != 0)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
         }
     }
 
