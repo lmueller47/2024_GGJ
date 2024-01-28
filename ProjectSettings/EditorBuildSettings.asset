@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: fe8bf058c89636f4b90025858ef444a8
+  - enabled: 1
+    path: Assets/Scenes/Is_It_Real.unity
+    guid: d379e45e4c09ca345b693cace94a327c
+  - enabled: 1
+    path: Assets/Scenes/Cant_Laugh_Anymore.unity
+    guid: 9d91b138fd68c6842a6ce38bbee62638
+  - enabled: 1
+    path: Assets/Scenes/Cant_Even_Smile.unity
+    guid: a635f0ffd5491794ca9f19ee98c09eca
   m_configObjects: {}
