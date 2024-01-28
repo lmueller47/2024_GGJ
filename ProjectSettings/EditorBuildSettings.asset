@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cant_Even_Smile.unity
     guid: a635f0ffd5491794ca9f19ee98c09eca
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: bc923a13cbeae6446a35479a6f4f5e3d
   m_configObjects: {}
