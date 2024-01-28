@@ -25,15 +25,6 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    //private void OnDrawGizmos()
-    //{
-        //if(platform!=null && startPoint!=null && endPoint!=null)
-        //{
-            //Gizmos.DrawLine(platform.transform.position, startPoint.transform.position);
-            //Gizmos.DrawLine(platform.transform.position, endPoint.transform.position);
-        //}
-    //}
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
