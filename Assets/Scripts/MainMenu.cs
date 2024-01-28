@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void QuitGame()
     {
         Debug.Log("QUIT");
